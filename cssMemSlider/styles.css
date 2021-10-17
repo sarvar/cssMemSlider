@@ -3,6 +3,7 @@
   --white: #fff;
   --black: #000;
   --overlay: rgba(0, 0, 0, 0.75);
+  --hover: #ffffff;
 }
 
 * {
@@ -108,7 +109,7 @@ body {
 }
 
 .cssmemSlider-wrapper .bottom label:hover {
-  background: currentColor;
+  background-color: var(--hover);
 }
 
 .bottom {
@@ -135,7 +136,7 @@ body {
 [id="slide2"]:checked ~ .cssmemSlider .bottom [for="slide2"],
 [id="slide3"]:checked ~ .cssmemSlider .bottom [for="slide3"],
 [id="slide4"]:checked ~ .cssmemSlider .bottom [for="slide4"] {
-  background: currentColor;
+  background-color: var(--hover);
 }
 
 /*Media*/
