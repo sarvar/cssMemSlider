@@ -1,10 +1,7 @@
-/* RESET RULES */
 :root {
   --bg: #010101;
   --white: #fff;
-  --red: #e74c3c;
   --black: #000;
-  --img-color: #ededed;
   --overlay: rgba(0, 0, 0, 0.75);
 }
 
@@ -43,14 +40,13 @@ input[type="radio"] {
 
 body {
   color: var(--white);
-  margin: 20px 0;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: var(--bg);
 }
 
 .container {
-  max-width: 1200px;
-  padding: 0 20px;
+  max-width: 75rem;
+  padding: 0 1.25rem;
   margin: 0 auto;
 }
 
@@ -69,8 +65,8 @@ body {
   transition: opacity 0.25s;
   height: 550px;
   overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  border-radius: 0.625rem;
+  margin-bottom: 1.25rem;
 }
 
 .cssmemSlider-wrapper .dots {
@@ -78,19 +74,19 @@ body {
 }
 
 .cssmemSlider-wrapper .dots li {
-  margin-right: 8px;
+  transition: opacity 0.25s;
 }
 
 .cssmemSlider-wrapper .dots label {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   border: 1px solid var(--white);
   border-radius: 50%;
   background-color: var(--black);
 }
 
 .cssmemSlider-wrapper .bottom .dots li:not(:last-child) {
-  margin-right: 8px;
+  margin-right: 1rem;
 }
 
 .cssmemSlider-wrapper .bottom .title {
@@ -100,7 +96,12 @@ body {
 .cssmemSlider-wrapper .bottom .title li {
   opacity: 0;
   color: var(--white);
-  font-size: 18px;
+  font-size: 1.125rem;
+  display: none;
+  transition: opacity 0.25s;
+}
+
+.cssmemSlider-wrapper .bottom .title.mobile {
   display: none;
 }
 
@@ -133,4 +134,27 @@ body {
 [id="slide3"]:checked ~ .cssmemSlider .bottom [for="slide3"],
 [id="slide4"]:checked ~ .cssmemSlider .bottom [for="slide4"] {
   background: currentColor;
+}
+
+/*Media*/
+@media only screen and (max-width: 768px) {
+  .cssmemSlider-wrapper .cssmemSlider-list li {
+    height: auto;
+  }
+  .cssmemSlider-wrapper .bottom .title.mobile {
+    display: block;
+  }
+  .cssmemSlider-wrapper .bottom .title.desktop {
+    display: none;
+  }
+  .bottom {
+    display: block;
+  }
+  .cssmemSlider-wrapper .dots {
+    justify-content: center;
+    margin-bottom: 0.938rem;
+  }
+  .cssmemSlider-wrapper .bottom .title li {
+    font-size: 0.938rem;
+  }
 }
