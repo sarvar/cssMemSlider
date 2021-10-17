@@ -1,0 +1,136 @@
+/* RESET RULES */
+:root {
+  --bg: #010101;
+  --white: #fff;
+  --red: #e74c3c;
+  --black: #000;
+  --img-color: #ededed;
+  --overlay: rgba(0, 0, 0, 0.75);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background-size: cover;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input[type="radio"] {
+  position: absolute;
+  bottom: 0;
+  left: -9999px;
+}
+
+body {
+  color: var(--white);
+  margin: 20px 0;
+  font-family: sans-serif;
+  background-color: var(--bg);
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.cssmemSlider-wrapper {
+  position: relative;
+}
+
+.cssmemSlider-wrapper .cssmemSlider-list {
+  display: grid;
+}
+
+.cssmemSlider-wrapper .cssmemSlider-list li {
+  grid-column: 1;
+  grid-row: 1;
+  opacity: 0;
+  transition: opacity 0.25s;
+  height: 550px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.cssmemSlider-wrapper .dots {
+  display: flex;
+}
+
+.cssmemSlider-wrapper .dots li {
+  margin-right: 8px;
+}
+
+.cssmemSlider-wrapper .dots label {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  background-color: var(--black);
+}
+
+.cssmemSlider-wrapper .bottom .dots li:not(:last-child) {
+  margin-right: 8px;
+}
+
+.cssmemSlider-wrapper .bottom .title {
+  display: flex;
+}
+
+.cssmemSlider-wrapper .bottom .title li {
+  opacity: 0;
+  color: var(--white);
+  font-size: 18px;
+  display: none;
+}
+
+.cssmemSlider-wrapper .bottom label:hover {
+  background: currentColor;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+[id="slide1"]:checked ~ .cssmemSlider .cssmemSlider-list li:nth-child(1),
+[id="slide2"]:checked ~ .cssmemSlider .cssmemSlider-list li:nth-child(2),
+[id="slide3"]:checked ~ .cssmemSlider .cssmemSlider-list li:nth-child(3),
+[id="slide4"]:checked ~ .cssmemSlider .cssmemSlider-list li:nth-child(4) {
+  opacity: 1;
+}
+
+[id="slide1"]:checked ~ .cssmemSlider .title li:nth-child(1),
+[id="slide2"]:checked ~ .cssmemSlider .title li:nth-child(2),
+[id="slide3"]:checked ~ .cssmemSlider .title li:nth-child(3),
+[id="slide4"]:checked ~ .cssmemSlider .title li:nth-child(4) {
+  opacity: 1;
+  display: block;
+}
+
+[id="slide1"]:checked ~ .cssmemSlider .bottom [for="slide1"],
+[id="slide2"]:checked ~ .cssmemSlider .bottom [for="slide2"],
+[id="slide3"]:checked ~ .cssmemSlider .bottom [for="slide3"],
+[id="slide4"]:checked ~ .cssmemSlider .bottom [for="slide4"] {
+  background: currentColor;
+}
